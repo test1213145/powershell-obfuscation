@@ -22,7 +22,7 @@ AMSI混淆绕过+powershell命令混淆绕过。
 
 由于部分的反混淆工具会在AST层面上进行反混淆的工作，因此powershell自带的大部分加密解密/编码解码的函数是形同虚设的，如[System.Convert]::FromBase64String等。应该尽可能去使用自定义的加密解密的function。
 
-这里我针对这两个学术界研究的难点，写了一个简单的powershell混淆器，事实证明效果确实也不错。具体思路如下：
+这里针对这两个学术界研究的难点，写了一个简单的powershell混淆器，事实证明效果确实也不错。具体思路如下：
 
 1、自定义加密解密function，function中进行字符串的逆序（逆序没有用powershell自带的函数，防止AST层面上解混淆）与位的+运算（不使用异或运算的原因是defender对-bxor监控很严格）。
 
